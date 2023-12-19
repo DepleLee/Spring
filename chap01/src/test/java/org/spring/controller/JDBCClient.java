@@ -17,7 +17,7 @@ import lombok.extern.log4j.Log4j;
 public class JDBCClient {
 	@Autowired
 	private ApplicationContext context;
-	
+	//왜이랭
 	@Test
 	public void dataSourceTest() {
 		DataSource ds = (DataSource)context.getBean("dataSource");
