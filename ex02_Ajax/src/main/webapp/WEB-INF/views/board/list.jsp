@@ -31,7 +31,7 @@
 											<th>title</th>
 											<th>content</th>
 											<th>writer</th>
-											<th>regdate</th>
+											<th>regdatee</th>
 										</tr>
                                 </thead>
                                 <tbody></tbody>
@@ -109,7 +109,7 @@
 						
 						let titleLink = $("<a>").attr("href","/board/get?bno="+board.bno).text(board.title);
 						let titleTd = $("<td>").append(titleLink);
-						row.append($("<td>").text(titleLink));
+						row.append($("<td>").text(titleTd));
 						row.append($("<td>").text(board.content));
 						row.append($("<td>").text(board.writer));
 						row.append($("<td>").text(formatDate));

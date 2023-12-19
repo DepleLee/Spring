@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.spring.mapper.BoardMapper">
 	<insert id="insert" parameterType="BoardVO" >
-		insert into tbl_board
+		insert into board
 		(title,content,writer)
 		values (#{title}, #{content}, #{writer})
 	</insert>
@@ -16,34 +16,34 @@
 		 -->
 	<insert id="insertSelectBno" parameterType="BoardVO"
 		keyColumn="bno" keyProperty="bno" useGeneratedKeys="true">
-		insert into tbl_board
+		insert into board
 		(title,content,writer)
 		values (#{title}, #{content}, #{writer})
 	</insert>
 	
 	<select id="selectAll" resultType="BoardVO">
-		select * from tbl_board
+		select * from board
 	</select>
 	
 	<update id="update" parameterType="BoardVO">
-		UPDATE tbl_board
+		UPDATE board
 		SET title = #{title},
 		content = #{content}
 		WHERE bno = #{bno}
 	</update>
 	
 	<delete id="delete" parameterType="BoardVO">
-		DELETE FROM tbl_board WHERE bno = #{bno}
+		DELETE FROM board WHERE bno = #{bno}
 	</delete>
 	
 	<!-- parameterType="BoardVO"가 없어도 가능하긴 함
 	(자동적으로 정해지기 때문,BoardVO가 아니라 Integer를 해도 Integer은 bno하나밖에 없어서 자동적으로 정해짐) 
 	하지만 직관적으로 보여주기 위해서 해주는게 좋음 -->
 	<select id="select" resultType="BoardVO" parameterType="BoardVO">
-		SELECT * FROM tbl_board WHERE bno=#{bno}
+		SELECT * FROM board WHERE bno=#{bno}
 	</select>
 	
 	<select id="num" resultType="Integer">
-		SELECT max(bno) FROM tbl_board
+		SELECT max(bno) FROM board
 	</select>
 </mapper>
