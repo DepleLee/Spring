@@ -22,7 +22,7 @@
 	</insert>
 	
 	<select id="selectAll" resultType="BoardVO">
-		select * from board
+		select * from board ORDER BY bno DESC
 	</select>
 	
 	<update id="update" parameterType="BoardVO">
